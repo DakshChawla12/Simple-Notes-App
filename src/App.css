@@ -159,3 +159,10 @@ body {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color from parent */
 }
+
+.active{
+  color: #232526;
+  background-color: white;
+  border:5px solid tomato;
+  border-radius: 10px;
+}

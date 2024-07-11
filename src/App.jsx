@@ -8,11 +8,15 @@ import Personal from "./pages/Personal.jsx";
 import Misc from "./pages/Misc.jsx";
 import Work from "./pages/Work.jsx";
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 const App = () => {
+
+  const [selectedTab,setSelectedTab] = useState("Home");
+
   return (
     <div className="container">
-      <SideBar />
+      <SideBar selectedTab={selectedTab} setSelectedTab={setSelectedTab}/>
       <Routes>
         <Route path="/"
           element={
