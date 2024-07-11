@@ -2,13 +2,26 @@ body {
   background: linear-gradient(to right, #232526, #414345);
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-content ,.personal , .work , .misc{
+  margin-left: 15rem;
+  /* Leave space for the sidebar */
+  width: calc(100% - 15rem);
+  padding: 1rem;
+}
+
 .header {
   color: aliceblue;
   height: 4rem;
 }
 
 .inputBox {
-  
+
   background-blend-mode: normal, lighten, soft-light;
   border-radius: 10px;
   width: 100%;
@@ -68,18 +81,20 @@ body {
 @keyframes fadeIn {
   0% {
     opacity: 0.8;
-    transform: scale(0.8);;
+    transform: scale(0.8);
+    ;
   }
 
   100% {
     opacity: 1;
-    transform: scale(1);;
+    transform: scale(1);
+    ;
   }
 }
 
 .Note h5 {
   color: aliceblue;
-  margin: 0 0 10px 0; 
+  margin: 0 0 10px 0;
   text-decoration: underline;
 }
 
@@ -90,6 +105,7 @@ body {
 
 
 .label {
+  color: aliceblue;
   font-size: larger;
   font-weight: bolder;
 }
@@ -98,7 +114,7 @@ body {
   display: grid;
   gap: 50px;
   justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .delete {
@@ -107,4 +123,39 @@ body {
   width: 5rem;
   margin-right: 3px;
   margin-bottom: 3px;
+}
+
+.side-bar {
+  color: white;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.side-bar ul {
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 0; 
+  margin: 0;
+}
+
+.side-bar ul li{
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.side-bar ul li:hover {
+  transform: scale(1.1);
+}
+
+.side-bar a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
 }

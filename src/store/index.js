@@ -1,4 +1,7 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
+import personalSlice from './personal';
+import workSlice from './Work';
+import miscSlice from './misc';
 
 const noteSlice = createSlice({
     name: 'notes',
@@ -14,20 +17,14 @@ const noteSlice = createSlice({
     }
 });
 
-const importanceSlice = createSlice({
-    name:'importance',
-    initialState:"",
-    reducers:{
-        setImportance: (state,action) =>{
-            console.log(state,action.payload);
-            return state = action.payload;
-        }
-    }
-});
+
 
 const notesStore = configureStore({
     reducer: {
         notes: noteSlice.reducer,
+        personal: personalSlice.reducer,
+        work: workSlice.reducer,
+        misc: miscSlice.reducer
     }
 });
 

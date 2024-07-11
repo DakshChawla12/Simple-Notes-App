@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 const NotesList = () => {
 
     const noteslist = useSelector(store => store.notes);
+    console.log(noteslist);
 
     return (<>
         <div className="NotesList">
